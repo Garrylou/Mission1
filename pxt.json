@@ -1,13 +1,14 @@
 {
     "name": "mission1",
     "version": "1.0.0",
-    "description": "Mission 1 extension for micro:bit",
+    "description": "Mission 1 radio and interference extension for micro:bit",
     "license": "MIT",
     "files": [
         "main.ts"
     ],
     "public": true,
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "radio": "*"
     }
 }

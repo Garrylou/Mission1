@@ -1,27 +1,32 @@
-
 /**
- * Set the color of a namespace (block category) by setting
- * the color attribute annotation on the namespace. Icons
- * are drawn from https://semantic-ui.com/elements/icon.html
- * To find the Unicode representation of an icon, inspect
- * the element using the browser's debugger
+ * Mission 1 blocks
  */
+//% color="#FF8000" weight=100 icon="\uf1eb"
+namespace mission1 {
 
-//% color="#ff0000" icon="\uf0a4"
-namespace color {
+    let pressCount = 0
+    let triggerAt = 0
 
-    //% block
-    export function foo() {
+    /**
+     * Shows a checkmark after random Button A presses
+     */
+    //% block="Mission 1 checkmark controller"
+    export function checkmarkController(): void {
 
-    }
+        pressCount = 0
+        triggerAt = randint(5, 8)
 
-    //% block
-    export function foo1() {
+        input.onButtonPressed(Button.A, function () {
+            pressCount++
 
-    }
+            if (pressCount >= triggerAt) {
+                basic.showIcon(IconNames.Yes)
+                basic.pause(1000)
+                basic.clearScreen()
 
-    //% block
-    export function foo2() {
-
+                pressCount = 0
+                triggerAt = randint(5, 8)
+            }
+        })
     }
 }

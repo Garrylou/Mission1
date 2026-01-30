@@ -51,7 +51,7 @@ namespace mission1 {
     // 📡 Send radio interference packets
     function sendInterference(): void {
         for (let i = 0; i < 5; i++) {
-            radio.sendNumber(randint(1000, 9999))
+            radio.sendNumber(50)
             basic.pause(100)
         }
     }
